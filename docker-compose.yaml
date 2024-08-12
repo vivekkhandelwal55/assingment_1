@@ -1,0 +1,14 @@
+version: '3'
+services:
+  ui:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "80:80"  
+  mongo:
+    image: "mongo"
+    volumes:
+      - mongodata:/data/db
+volumes:
+  mongodata:
